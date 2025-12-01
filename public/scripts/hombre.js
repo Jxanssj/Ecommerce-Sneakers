@@ -3,7 +3,7 @@
   const productos = [
     {
       id: 1,
-      nombre: 'Nike Air Max 90',
+      nombre: 'Nike Air Max 90000',
       marca: 'Nike',
       precio: 3299,
       colores: {
