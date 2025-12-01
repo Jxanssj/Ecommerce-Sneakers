@@ -1,0 +1,272 @@
+document.addEventListener("DOMContentLoaded", () => {
+    // Verificar si el usuario ya está autenticado
+    if (!localStorage.getItem("loggedIn")) {
+        mostrarLogin();
+    } else {
+        iniciarAplicacion();
+    }
+});
+
+function mostrarLogin() {
+    document.body.innerHTML = `
+        <div class="login-container">
+            <h2>Iniciar Sesión</h2>
+            <form id="login-form">
+                <label for="username">Usuario:</label>
+                <input type="text" id="username" required>
+                
+                <label for="password">Contraseña:</label>
+                <input type="password" id="password" required>
+                
+                <button type="submit">Ingresar</button>
+            </form>
+        </div>
+    `;
+
+    document.getElementById("login-form").addEventListener("submit", (event) => {
+        event.preventDefault();
+        const username = document.getElementById("username").value;
+        const password = document.getElementById("password").value;
+
+        if (username === "admin" && password === "1234") {
+            localStorage.setItem("loggedIn", "true");
+            iniciarAplicacion();
+        } else {
+            alert("Usuario o contraseña incorrectos");
+        }
+    });
+}
+
+function iniciarAplicacion() {
+    document.body.innerHTML = `
+        <header>
+            <h1>Bienvenido a Dona Juana</h1>
+            <button id="logout">Cerrar Sesión</button>
+            <nav>
+                <ul>
+                    <li><a href="#" id="menu principal">Menu principal</a></li>
+                    <li><a href="#" id="tutoriales">Contenedores</a></li>
+                    <li><a href="#" id="herramientas">Audios</a></li>
+                    <li><a href="#" id="contacto">Contacto</a></li>
+                    
+                </ul>
+            </nav>
+        </header>
+        <main id="content">
+            <h2>Inicio</h2>
+            <p>Explora nuestro catalogo.</p>
+        </main>
+    `;
+
+    document.getElementById("logout").addEventListener("click", () => {
+        localStorage.removeItem("loggedIn");
+        mostrarLogin();
+    });
+    document.getElementById("menu principal").addEventListener("click", () => {
+        document.getElementById("content").innerHTML = `
+            <h2>Menu principal</h2>
+            <ul> <h1>Bienvenido a Sneakers Dona Juana</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="tutoriales.html">Contenedores</a></li>
+                <li><a href="herramientas.html">Herramientas</a></li>
+                <li><a href="contacto.html">Contacto</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="carrusel">
+        <button id="prev">⬅️</button>
+        <img id="carrusel-img" src="imagenes/imagen1.png" width="250" height="250" alt="Ejemplo 1">
+        <img id="carrusel-img" src="imagenes/imagen2.png" width="250" height="250" alt="Ejemplo 2">
+        <img id="carrusel-img" src="imagenes/imagen3.png" width="250" height="250" alt="Ejemplo 3">
+        <img id="carrusel-img" src="imagenes/imagen6.png" width="250" height="250" alt="Ejemplo 4">
+        <img id="carrusel-img" src="imagenes/imagen5.png" width="250" height="250" alt="Ejemplo 4">
+         <img id="carrusel-img" src="imagenes/imagen4.png" width="250" height="250" alt="Ejemplo 4">
+        <button id="next">➡️</button>
+    </section>
+
+
+    <section>
+        <h2>Tabla de Tecnologías</h2>
+        <table>
+            <tr>
+                <th>Tecnología</th>
+                <th>Uso</th>
+            </tr>
+            <tr>
+                <td>HTML</td>
+                <td>Estructura de la página</td>
+            </tr>
+            <tr>
+                <td>CSS</td>
+                <td>Estilos y diseño</td>
+            </tr>
+            <tr>
+                <td>JavaScript</td>
+                <td>Interactividad</td>
+            </tr>
+        </table>
+    </section>
+
+
+    <section>
+        <h2>Ubicación</h2>
+        <p>Visítanos en nuestra sede:</p>
+        <a href="https://www.google.com/maps?q=Ubicacion" target="_blank">Ver en Google Maps</a>
+    </section>
+
+    <section>
+        <h2>Contacto</h2>
+        <form>
+            <label for="nombre">Nombre:</label>
+            <input type="text" id="nombre" name="nombre" required>
+            
+            <label for="email">Correo:</label>
+            <input type="email" id="email" name="email" required>
+            
+            <label for="mensaje">Mensaje:</label>
+            <textarea id="mensaje" name="mensaje" required></textarea>
+            
+            <button type="submit">Enviar</button>
+        </form>
+    </section>
+   <section>
+    <h2>Tenis</h2>
+    <form action="tenis.html" method="get">
+        <label for="nombre">Consulta la página:</label>
+        <button type="submit">Entrar</button>
+    
+    </form>
+</section>
+ <section>
+    <h2>Deshboard</h2>
+    <form action="Dashboard/index.html" method="get">
+        <label for="nombre">Consulta la página:</label>
+        <button type="submit">Entrar</button>
+    
+    </form>
+</section>
+ <section>
+    <h2>Devoluciones</h2>
+    <form action="ed/index.html" method="get">
+        <label for="nombre">Consulta la página:</label>
+        <button type="submit">Entrar</button>
+    
+    </form>
+</section>
+ <section>
+    <h2>Juega y gana</h2>
+    <form action="Serpiente/index.html" method="get">
+        <label for="nombre">Consulta la página:</label>
+        <button type="submit">Entrar</button>
+    
+    </form>
+</section>
+    </section>
+                <li><a href="#">HTML desde cero</a></li>
+                <li><a href="#">CSS avanzado</a></li>
+                <li><a href="#">JavaScript para principiantes</a></li>
+            </ul>
+            <button onclick="iniciarAplicacion()">Volver al inicio</button>
+        `;
+    });
+
+    document.getElementById("tutoriales").addEventListener("click", () => {
+        document.getElementById("content").innerHTML = `
+        <h3>Contenedores:</h3>
+        <div style="width:200px; height:100px; background-color: tomato; margin:10px; text-align:center; line-height:100px; color:white;">
+        </div>
+
+        <div style="width:200px; height:100px; background: linear-gradient(to right, blue, purple); margin:10px; text-align:center; line-height:100px; color:white;">
+
+        </div>
+
+        <div style="width:200px; height:100px; background-image: url('https://wallpapercave.com/wp/wp4020906.jpg'); background-size: cover; margin:10px; text-align:center; line-height:100px; color:white;">
+            
+        </div>
+        <div style="width:200px; height:100px; border:3px solid black; margin:10px; text-align:center; line-height:100px;">
+
+        </div>
+
+        <div id="contenedorBorde" style="width:200px; height:100px; border:3px solid green; margin:10px; text-align:center; line-height:100px;">
+            Con borde opcional
+        </div>
+        <button onclick="toggleBorde()">Mostrar/Ocultar borde</button>
+            <button onclick="iniciarAplicacion()">Volver al inicio</button>
+        `;
+          // Función para mostrar/ocultar bordes
+    window.toggleBorde = function() {
+        const contenedor = document.getElementById("contenedorBorde");
+        if (contenedor.style.border === "none") {
+            contenedor.style.border = "3px solid green";
+        } else {
+            contenedor.style.border = "none";
+        }
+    };
+    });
+
+document.getElementById("herramientas").addEventListener("click", () => {
+    document.getElementById("content").innerHTML = `
+
+        <h3>Audios</h3>
+        <audio controls>
+            <source src="audios/As It Was.mp3" type="audio/mp3">
+            Tu navegador no soporta audio.
+        </audio>
+        <audio controls>
+            <source src="audios/GHOST.mp3" type="audio/mp3">
+            Tu navegador no soporta audio.
+        </audio>
+        <audio controls>
+            <source src="audios/Te Quiero Así.mp3" type="audio/mp3">
+            Tu navegador no soporta audio.
+        </audio>
+        <audio controls>
+            <source src="audios/Desvelado.mp3" type="audio/mp3">
+            Tu navegador no soporta audio.
+        </audio>
+        <audio controls>
+            <source src="audios/Y LLORO.mp3" type="audio/mp3">
+            Tu navegador no soporta audio.
+        </audio>
+
+        <button onclick="iniciarAplicacion()">Volver al inicio</button>
+    `;
+});
+
+document.getElementById("contacto").addEventListener("click", () => {
+    document.getElementById("content").innerHTML = `
+        <h2>Contacto</h2>
+        <p>Ubicación:</p>
+        <a href="https://www.google.com/maps" target="_blank">Ver en Google Maps</a>
+        
+        <h3>Formulario de contacto</h3>
+        <form>
+            <label for="nombre">Nombre:</label>
+            <input type="text" id="nombre" required>
+            <label for="mensaje">Mensaje:</label>
+            <textarea id="mensaje" required></textarea>
+            <button type="submit">Enviar</button>
+        </form>
+
+        <h3>Estilos:</h3>
+        <p style="font-family: Arial, sans-serif;">Ven y conoce de moda</p>
+        <p style="font-family: 'Times New Roman', serif;">Ven y conoce de moda</p>
+        <p style="font-family: Courier, monospace;">Ven y conoce de moda</p>
+        <p style="font-family: Georgia, serif;">Ven y conoce de moda</p>
+        <p style="font-family: Verdana, sans-serif;">Ven y conoce de moda</p>
+
+    <h3>Tendencias:</h3>
+        <a href="https://www.nike.com/mx/" target="_blank">Nike</a><br>
+        <a href="https://www.adidas.mx/" target="_blank">Adidas</a><br>
+        <a href="https://mx.puma.com/" target="_blank">Puma</a><br>
+        <a href="https://www.reebok.mx/" target="_blank">Reebok</a><br>
+        <a href="https://www.converse.com/mx" target="_blank">Converse</a><br><br>
+
+        <button onclick="iniciarAplicacion()">Volver al inicio</button>
+    `;
+});
+
+}

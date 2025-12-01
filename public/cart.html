@@ -1,0 +1,38 @@
+//cart.html
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <title>Carrito - Sneakers Dona Juana</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <link rel="stylesheet" href="/styles/styles.css">
+</head>
+<body>
+  <div class="card" style="max-width:1000px;margin:24px auto;">
+    <div class="topbar" style="display:flex;justify-content:space-between;align-items:center;">
+      <h1>Tu Carrito</h1>
+      <div>
+        <a class="btn" href="/">Seguir comprando</a>
+      </div>
+    </div>
+    <div id="cart-container"></div>
+  </div>
+
+  <!-- === Librerías necesarias === -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+
+  <!-- === Script principal del carrito === -->
+  <script src="/scripts/carrito.js"></script>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", function(){
+      if (window.Carrito && window.Carrito.renderCartPage) {
+        window.Carrito.renderCartPage("cart-container");
+      } else {
+        document.getElementById("cart-container").innerHTML = "<p>Cargando carrito...</p>";
+      }
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,50 @@
+[
+  {
+    "id": 1,
+    "name": "Sneaker A90",
+    "brand": "Nike",
+    "color": "Blanco",
+    "price": 89.99,
+    "image": "/Imagenes/a90.jpg"
+  },
+  {
+    "id": 2,
+    "name": "Adic Runner",
+    "brand": "Adidas",
+    "color": "Negro",
+    "price": 79.99,
+    "image": "/Imagenes/adic.jpg"
+  },
+  {
+    "id": 3,
+    "name": "Puma Classic",
+    "brand": "Puma",
+    "color": "Rojo",
+    "price": 69.99,
+    "image": "/Imagenes/pumar.jpg"
+  },
+  {
+    "id": 4,
+    "name": "Lift Trainer",
+    "brand": "Generic",
+    "color": "Blanco",
+    "price": 59.99,
+    "image": "/Imagenes/lift.jpg"
+  },
+  {
+    "id": 5,
+    "name": "Cali Sneak",
+    "brand": "Nike",
+    "color": "Negro",
+    "price": 99.99,
+    "image": "/Imagenes/cali.jpg"
+  },
+  {
+    "id": 6,
+    "name": "AX700 Pro",
+    "brand": "Adidas",
+    "color": "Blanco",
+    "price": 129.99,
+    "image": "/Imagenes/ax700.jpg"
+  }
+]

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mis Favoritos - Doña Juana Sneakers</title>
+  <link rel="stylesheet" href="/styles/styles.css">
+  <link rel="stylesheet" href="/styles/wishlist.css">
+</head>
+
+<body>
+  <header>
+    <h1>Mis Favoritos</h1>
+    <div>
+      <button class="btn" onclick="window.location.href='/'">Volver al inicio</button>
+    </div>
+  </header>
+
+  <main>
+    <h2>Productos guardados</h2>
+    <div id="wishlist-container" class="wishlist-grid"></div>
+  </main>
+
+  <script src="/scripts/carrito.js"></script>
+  <script src="/scripts/wishlist.js"></script>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", function(){
+      if (window.Wishlist && window.Wishlist.renderWishlist) {
+        window.Wishlist.renderWishlist("wishlist-container");
+      } else {
+        document.getElementById("wishlist-container").innerHTML = `
+          <p class="vacio">No se pudo cargar la lista de deseos.</p>`;
+      }
+    });
+  </script>
+</body>
+</html>

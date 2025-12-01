@@ -1,0 +1,21 @@
+---
+import Layout from "../layouts/Layout.astro";
+---
+
+<Layout title="Página principal">
+
+<main id="contenido">
+<section id="formulario">
+<h2>Formulario básico</h2>
+<form action="#" method="post">
+<label for="correo">Correo</label>
+<input autocomplete="email" id="correo" name="correo" placeholder="tu@correo.com" required="" type="email"/>
+<label for="mensaje">Mensaje</label>
+<textarea id="mensaje" name="mensaje" placeholder="Escribe tu mensaje…" rows="3"></textarea>
+<label><input name="acepto" required="" type="checkbox"/> Acepto términos</label>
+<button type="submit">Enviar</button>
+</form>
+</section>
+</main>
+
+</Layout>

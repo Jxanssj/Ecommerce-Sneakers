@@ -1,0 +1,551 @@
+/* Importar tipografías estilo YoungLA */
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Barlow+Condensed:wght@400;500;700&display=swap');
+
+/* Estilo general */
+body {
+    font-family: 'Barlow Condensed', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #fff;
+    color: #111;
+}
+
+/* Estilos del login */
+.login-container {
+    width: 300px;
+    margin: 100px auto;
+    padding: 25px;
+    background: #fff;
+    box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.15);
+    border-radius: 8px;
+    text-align: center;
+}
+
+.login-container h2 {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 26px;
+    margin-bottom: 20px;
+    color: #e53935;
+    letter-spacing: 1px;
+}
+
+.login-container input {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1.5px solid #e53935;
+    border-radius: 4px;
+    font-size: 15px;
+}
+
+.login-container button {
+    background-color: #111;
+    color: white;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    width: 100%;
+    font-weight: 600;
+    transition: 0.3s ease;
+    border-radius: 4px;
+}
+
+.login-container button:hover {
+    background-color: #e53935;
+}
+
+/* Header principal */
+header {
+    background: #111;
+    color: white;
+    padding: 15px;
+    text-align: center;
+}
+
+header h1 {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 36px;
+    letter-spacing: 1px;
+    margin: 0;
+}
+
+/* Header logo responsive para imagen y video */
+.logo-header img,
+.logo-responsive {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+    border-radius: 8px;
+}
+
+/* Video específico para logo */
+.logo-responsive.video-logo {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+    border-radius: 8px;
+}
+
+/* Menú de navegación */
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 10px 0 0 0;
+}
+
+nav ul li {
+    display: inline;
+    margin: 0 15px;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s;
+}
+
+nav ul li a:hover {
+    color: #e53935;
+}
+
+/* Botón de cerrar sesión */
+#logout {
+    float: right;
+    background: #e53935;
+    color: white;
+    border: none;
+    padding: 8px 14px;
+    cursor: pointer;
+    border-radius: 4px;
+    transition: background 0.3s;
+}
+
+#logout:hover {
+    background: #c62828;
+}
+
+/* Contenido principal */
+main {
+    padding: 20px;
+    text-align: center;
+}
+
+/* Catálogo de productos */
+.catalogo {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.producto {
+    width: 220px;
+    background: #fff;
+    padding: 12px;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    text-align: left;
+    transition: transform 0.2s ease;
+}
+
+.producto:hover {
+    transform: translateY(-4px);
+}
+
+.producto img {
+    width: 100%;
+    height: 140px;
+    object-fit: cover;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+.producto h3 {
+    margin: 8px 0 4px;
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 18px;
+    letter-spacing: 0.5px;
+}
+
+.producto .precio,
+.producto .oferta {
+    color: #e53935;
+    font-weight: bold;
+    font-size: 16px;
+}
+
+.producto del {
+    color: #999;
+    font-size: 14px;
+}
+
+/* Botones */
+.btn {
+    background: #111;
+    color: white;
+    border: none;
+    padding: 8px 10px;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.btn.primary {
+    background: #e53935;
+}
+
+.btn:hover {
+    background: #333;
+}
+
+.btn.primary:hover {
+    background: #c62828;
+}
+
+.btn.small {
+    padding: 4px 6px;
+    font-size: 13px;
+}
+
+/* Tabla del carrito */
+.tabla-carrito {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.tabla-carrito th, .tabla-carrito td {
+    padding: 8px;
+    border-bottom: 1px solid #eee;
+    text-align: left;
+}
+
+/* Imágenes pequeñas */
+.mini {
+    width: 80px;
+    height: 60px;
+    object-fit: cover;
+    border-radius: 6px;
+}
+
+/* Totales y acciones */
+.total {
+    text-align: right;
+    font-size: 18px;
+    font-weight: bold;
+    margin-top: 12px;
+}
+
+.actions {
+    text-align: right;
+    margin-top: 10px;
+}
+
+/* Ícono del carrito */
+.cart-icon {
+    position: fixed;
+    right: 18px;
+    top: 12px;
+    z-index: 9999;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    background: rgba(255,255,255,0.95);
+    padding: 6px 10px;
+    border-radius: 24px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.12);
+    cursor: pointer;
+    transition: transform 0.2s;
+}
+
+.cart-icon:hover {
+    transform: scale(1.05);
+}
+
+.cart-icon img {
+    width: 26px;
+    height: 26px;
+}
+
+#cart-icon-count {
+    background: #e53935;
+    color: white;
+    font-weight: bold;
+    padding: 2px 6px;
+    border-radius: 12px;
+    min-width: 18px;
+    text-align: center;
+    display: inline-block;
+}
+
+/* Animación carrito */
+.cart-bounce {
+    animation: cart-bounce 0.6s ease;
+}
+
+@keyframes cart-bounce {
+    0% { transform: translateY(0) scale(1); }
+    30% { transform: translateY(-6px) scale(1.08); }
+    60% { transform: translateY(0) scale(1); }
+    100% { transform: translateY(0) scale(1); }
+}
+
+/* MODAL DE ZOOM Y GIRO */
+#zoom-modal {
+    display: flex;
+    gap: 20px;
+    padding: 20px;
+    justify-content: center;
+    align-items: center;
+}
+
+#zoom-modal img {
+    border-radius: 6px;
+}
+
+#tryon-modal video {
+    border-radius: 6px;
+}
+.tabla-carrito {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 12px 0;
+}
+.tabla-carrito th, .tabla-carrito td {
+  border-bottom: 1px solid #ccc;
+  padding: 8px;
+  text-align: center;
+}
+
+.cantidad-control {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+
+.btn-cant {
+  background: #ddd;
+  border: none;
+  padding: 4px 8px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: 0.2s;
+}
+.btn-cant:hover { background: #bbb; }
+
+/* ---------------- Ticket ---------------- */
+.ticket {
+  background: #fff;
+  border: 1px solid #ccc;
+  padding: 12px;
+  max-width: 400px;
+  margin: 12px auto;
+  text-align: left;
+  font-size: 14px;
+  border-radius: 8px;
+  box-shadow: 0 0 6px rgba(0,0,0,0.1);
+}
+.ticket table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 8px;
+}
+.ticket th, .ticket td {
+  border-bottom: 1px solid #ccc;
+  padding: 4px;
+  text-align: left;
+}
+.ticket del {
+  color: #888;
+}
+.ticket .oferta {
+  color: #c62828;
+  font-weight: 600;
+}
+
+/* ---------------- Botones ---------------- */
+.btn {
+  padding: 8px 16px;
+  background: #222;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  margin: 6px;
+  transition: 0.3s;
+}
+.btn.primary { background: #0078d7; }
+.btn.small { font-size: 12px; padding: 4px 10px; }
+.btn:hover { opacity: 0.8; }
+
+/* ---------------- Formularios ---------------- */
+.form-envio input {
+  width: 100%;
+  padding: 6px;
+  margin: 4px 0 12px;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+}
+
+/* ---------------- Descuentos ---------------- */
+.oferta {
+  color: #d32f2f;
+  font-weight: bold;
+}
+.desc {
+  color: #388e3c;
+  font-size: 12px;
+}
+.tabla-carrito td del {
+  color: #888;
+  font-size: 13px;
+}
+
+/* ---------------- Tabla del carrito ---------------- */
+.tabla-carrito {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 12px;
+}
+.tabla-carrito th, .tabla-carrito td {
+  border: 1px solid #ddd;
+  padding: 8px;
+  text-align: center;
+}
+.tabla-carrito th {
+  background: #f3f3f3;
+  font-weight: 600;
+}
+
+/* ---------------- Mensaje carrito vacío ---------------- */
+.empty {
+  text-align: center;
+  padding: 30px;
+  color: #666;
+  font-size: 15px;
+}
+
+/* ---------------- Mensaje de ahorro ---------------- */
+.ahorro {
+  color: #008000;
+  font-weight: bold;
+  text-align: center;
+  margin-top: 10px;
+}
+/* -------- Paso 2 estilizado -------- */
+.paso-envio {
+  max-width: 500px;
+  margin: 20px auto;
+  background: #fff;
+  padding: 24px;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+.paso-envio h2 {
+  text-align: center;
+  margin-bottom: 16px;
+  color: #222;
+}
+.form-envio label {
+  display: block;
+  font-weight: 600;
+  margin-bottom: 6px;
+  color: #444;
+}
+.form-envio input {
+  width: 100%;
+  padding: 8px;
+  margin-bottom: 12px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+}
+.botones-envio {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 10px;
+}
+.anim {
+  animation: fadeIn 0.4s ease;
+}
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+.logo-ticket {
+  display: block;
+  margin: 0 auto 12px auto;
+  width: 120px;
+}
+.ticket.vista {
+  background: #fefefe;
+  border: 1px solid #ddd;
+  padding: 20px;
+  max-width: 450px;
+  margin: 20px auto;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+.ticket.vista h3 {
+  text-align: center;
+  color: #333;
+  margin-bottom: 10px;
+}
+.ticket.vista table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 13px;
+}
+.ticket.vista th, .ticket.vista td {
+  border-bottom: 1px solid #ccc;
+  padding: 6px;
+  text-align: left;
+}
+.ticket.vista p {
+  margin: 6px 0;
+  color: #333;
+}
+.btn:hover {
+  background: black !important;
+  color: white !important;
+}
+.categorias-destacadas {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  margin: 40px 0;
+  flex-wrap: wrap;
+}
+
+.categoria-card {
+  width: 260px;
+  text-align: center;
+  cursor: pointer;
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.categoria-card img {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+}
+
+.categoria-card h3 {
+  background: #fffefe;
+  color: rgb(31, 30, 30);
+  margin: 0;
+  padding: 10px;
+  font-size: 1.1rem;
+}
+
+.categoria-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 15px rgba(0,0,0,0.3);
+}
