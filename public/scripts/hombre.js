@@ -1130,13 +1130,13 @@ div.querySelector('.fav').onclick = () => {
   const existe = lista.some(item => item.id === producto.id);
 
   if (existe) {
-    // 🔹 Si ya está, lo eliminamos
+    //  Si ya está, lo eliminamos
     window.Wishlist.removeFromWishlist(producto.id);
     favBtn.textContent = "❤️";
   } else {
-    // 🔹 Si no está, lo agregamos
+    //  Si no está, lo agregamos
     window.Wishlist.addToWishlist(producto);
-    favBtn.textContent = "💔 Eliminar de favoritos";
+    favBtn.textContent = "Eliminar";
   }
 };
 
